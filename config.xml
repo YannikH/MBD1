@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="nl.avans.mbd.id2066492" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Eet.swipe</name>
+    <description>
+        An eet.nu api implementation
+    </description>
+    <author>
+        Yannik Hegge
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <splash src="splash.png" />
+    <icon src="icon.png" />
+
+
+    <access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+
+    <plugin name="cordova-plugin-compat" />
+    <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1.1.0" />
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="3.2.1" />
+    <plugin name="cordova-plugin-splashscreen" />
+</widget>

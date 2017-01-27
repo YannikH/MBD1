@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <title>Eet.nu</title>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <!--<link rel="stylesheet" href="css/eet.min.css" />-->
+  		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+  		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" href="index.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <div class="navbar-header">
+				<a id="navbar-left" class="navbar-brand">
+					<i id="navbar-left-icon" class=""></i>
+				</a>
+				<a id="navbar-title" class="navbar-brand center">
+					Eet.nu
+				</a>
+				<a id="navbar-right" class="navbar-brand pull-right">
+				</a>
+		    </div>
+		  </div>
+		</nav>
+
+		<div data-role="panel" id="menuPanel">
+		    <ul>
+		    	<li>
+		    		Search distance 
+		    		<select id="distanceOption">
+		    			<option value=5>5km</option>
+		    			<option value=10>10km</option>
+		    			<option value=15>15km</option>
+		    			<option value=20>20km</option>
+		    			<option value=25>25km</option>
+		    		</select>
+		    	</li>
+		    	<li>
+		    		<a onClick="hardCodeLocation()">Hard code location</a>
+		    	</li>
+		    	<li>
+		    		<a onClick="signOut()">Sign out</a>
+		    	</li>
+		    </ul>
+		</div><!-- /panel -->
+
+		<!-- Start of first page: #one -->
+		<div class="page" data-nav-left="menu" data-title="Eet.nu" data-role="page" id="home">
+
+
+			<div data-role="content" class="fullwidth">	
+				<div class="padding center">
+					<h4>Hungry?</h4>
+					<p>Here's one of your favourites</p>
+
+					<hr>
+					<div class="home-fav row">
+						<div class="col-xs-2">
+							<i class="fa fa-heart fa-3x"></i>
+						</div>
+						<div class="col-xs-10">
+							<h4 class="nomargin-top title text-left">Finding a favourite</h4>
+							<p class="text-left"><b class="tagline"></b></p>
+						</div>
+					</div>
+					<div class="row grey">
+						<h4>Want something new?</h4>
+					</div>
+					<div class="row" onClick="openList()">
+						<div class="col-xs-2">
+							<i class="fa fa-list fa-3x"></i>
+						</div>
+						<div class="col-xs-10">
+							<h4 class="nomargin-top title text-left"><span class="num-restaurants">3</span> Restaurants</h4>
+							<p class="text-left"><b>in your current list</b></p>
+						</div>
+					</div>
+					<hr>
+					<div class="row" id="search">
+						<div class="col-xs-2">
+							<i class="fa fa-search fa-3x"></i>
+						</div>
+						<div class="col-xs-10">
+							<h4 class="nomargin-top title text-left">Explore</h4>
+							<p class="text-left"><b>Find restaurants near you</b></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div><!-- /page one -->
+
+		<!-- Start of opening page: #welcome -->
+		<div class="page" data-role="page" id="welcome">
+
+			<div data-role="content" data-theme="d">	
+				<img src="img/eet-logo.png" id="landing-logo"/>
+				<h4> let's get started</h4>
+				<input type="text" id="email-field" value="yannikhegge@gmail.com" placeholder="name@email.com" />
+				<p id="user-not-found" class="bg-danger" hidden>Your account could not be found</p>
+				<a id="register" href="https://www.eet.nu/registreer" data-role="button" data-inline="true">Sign up</a>
+				<a id="login" href="#" data-role="button" data-inline="true">Sign in</a>
+				<p>or</p>
+				<a id="guest" href="#home" data-role="button" data-inline="true">Continue without account</a>
+			</div><!-- /content -->
+		</div>
+
+		<!-- Start of second page: #two -->
+		<div class="page" data-nav-left="back" data-nav-right="list" data-title="Explore" data-role="page" id="browse">
+
+			<div data-role="content" class="fullwidth">
+				<div class="loading">
+					<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+					<span class="sr-only">Loading...</span>
+					<h1>Searching...</h1>
+				</div>
+				<div class="cards">
+					<div class="card one">
+						<div class="card-content">
+							<h1 class="name">Restaurant</h1>
+							<span class="tagline"></span>
+							<h4>About</h4>
+							<b>Style</b>: <span class="category"></span><br/>
+							<b>Score</b>: <span class="score"></span><br/>
+							<h4>Location</h4>
+							<b>Street</b>: <span class="street"></span><br/>
+							<b>Town</b>: <span class="town"></span><br/>
+							<h4>Contact</h4>
+							<div class="center">
+								<a href="" class="website">	
+									<span class="fa-stack fa-2x">
+									  <i class="fa fa-circle  fa-stack-2x"></i>
+									  <i class="fa fa-globe fa-lg fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+								<a href="" class="phone">
+									<span class="fa-stack fa-2x">
+									  <i class="fa fa-circle  fa-stack-2x"></i>
+									  <i class="fa fa-phone fa-lg fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="nav centered">
+							<span class="fa-stack fa-2x">
+							  <i class="fa fa-circle  fa-stack-2x"></i>
+							  <i class="fa fa-times fa-lg fa-stack-1x fa-inverse"></i>
+							</span>
+							<span class="fa-stack fa-2x">
+							  <i class="fa fa-circle  fa-stack-2x"></i>
+							  <i class="fa fa-heart fa-lg fa-stack-1x fa-inverse"></i>
+							</span>
+						</div>
+					</div>
+					<div class="card two">
+						<div class="card-content">
+							<h1 class="name">Restaurant</h1>
+							<span class="tagline"></span>
+							<h4>About</h4>
+							<b>Style</b>: <span class="category"></span><br/>
+							<b>Score</b>: <span class="score"></span><br/>
+							<h4>Location</h4>
+							<b>Street</b>: <span class="street"></span><br/>
+							<b>Town</b>: <span class="town"></span><br/>
+							<h4>Contact</h4>
+							<div class="center">
+								<a href="" class="website">	
+									<span class="fa-stack fa-2x">
+									  <i class="fa fa-circle  fa-stack-2x"></i>
+									  <i class="fa fa-globe fa-lg fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+								<a href="" class="phone">
+									<span class="fa-stack fa-2x">
+									  <i class="fa fa-circle  fa-stack-2x"></i>
+									  <i class="fa fa-phone fa-lg fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="nav centered">
+							<span class="fa-stack fa-2x">
+							  <i class="fa fa-circle  fa-stack-2x"></i>
+							  <i class="fa fa-times fa-lg fa-stack-1x fa-inverse"></i>
+							</span>
+							<span class="fa-stack fa-2x">
+							  <i class="fa fa-circle  fa-stack-2x"></i>
+							  <i class="fa fa-heart fa-lg fa-stack-1x fa-inverse"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div id="restaurant-debug-list">
+				</div>
+			</div><!-- /content -->
+			
+		</div><!-- /page two -->
+
+		<div class="page" data-nav-left="back" data-nav-right="reset" data-title="Eet.nu" data-role="page" id="list">
+
+			<div data-role="content" class="fullwidth">
+				<div class="restaurantList">
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="page" data-role="page" data-nav-left="back" data-title="Restaurant" id="restaurant">
+			<div data-role="content">
+				<h1 class="name">restaurantname</h1>
+				<hr>
+				<h4>Scores</h4>
+				Overall rating: 
+				<span class="genrating"></span><br/>
+				Reviewer ratings out of <span class="numReviews">0</span> reviews: <br/>
+				<table class="table center reviewScores">
+					<tr>
+						<td><i class="fa fa-cutlery fa-2x"></i><br/>Food</td>
+						<td><i class="fa fa-volume-up fa-2x"></i><br/>Ambience</td>
+						<td><i class="fa fa-user fa-2x"></i><br/>Service</td>
+						<td><i class="fa fa-eur fa-2x"></i><br/>Value</td>
+					</tr>
+					<tr>
+						<td class="foodScore"></td>
+						<td class="ambienceScore"></td>
+						<td class="serviceScore"></td>
+						<td class="valueScore"></td>
+					</tr>
+				</table>
+				<button class="btn btn-primary navigate" onClick="navigate(this)"><i class="fa fa-map"></i> Navigate</button>
+				<hr>
+				<h4>Opening hours</h4>
+				<hr>		
+				<table id="opening">
+					<tr>
+						<th>Day</th>
+						<th>Lunch</th>
+						<th>Dinner</th>
+					</tr>
+					<tr>
+						<td>MO</td>
+						<td class="0"></td>
+						<td class="0d"></td>
+					</tr>
+					<tr>
+						<td>TUE</td>
+						<td class="1"></td>
+						<td class="1d"></td>
+					</tr>
+					<tr>
+						<td>WED</td>
+						<td class="2"></td>
+						<td class="2d"></td>
+					</tr>
+					<tr>
+						<td>THU</td>
+						<td class="3"></td>
+						<td class="3d"></td>
+					</tr>
+					<tr>
+						<td>FRI</td>
+						<td class="4"></td>
+						<td class="4d"></td>
+					</tr>
+					<tr>
+						<td>SAT</td>
+						<td class="5"></td>
+						<td class="5d"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<script src="global.js"></script>
+		<script src="js/user.js"></script>
+		<script src="js/home.js"></script>
+		<script src="js/list.js"></script>
+		<script src="js/browse.js"></script>
+		<script src="js/restaurant.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+@media ( min-width: 768px ) {
+
+	/* wrap on wide viewports once open */
+
+	.ui-panel-page-content-open.ui-panel-page-content-position-left {
+		margin-right: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-position-right {
+		margin-left: 17em;
+	}
+	.ui-panel-page-content-open {
+		width: auto;
+	}
+
+	/* disable "dismiss" on wide viewports */
+	.ui-panel-dismiss {
+		display: none;
+	}
+
+	/* same as the above but for panels with display mode "push" only */
+
+	.ui-panel-page-content-open.ui-panel-page-content-position-left.ui-panel-page-content-display-push {
+		margin-right: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-position-right.ui-panel-page-content-display-push {
+		margin-left: 17em;
+	}
+	.ui-panel-page-content-open.ui-panel-page-content-display-push {
+		width: auto;
+	}
+
+	.ui-panel-dismiss-display-push {
+		display: none;
+	}
+}
+
+#welcome {
+	background-color: #ac2773;
+	text-shadow: none;
+	color: white;
+	text-align: center;
+}
+
+#welcome .ui-panel-wrapper {
+	background-color: inherit;
+}
+
+#welcome .ui-panel-wrapper h4 {
+	color: white;
+	text-shadow: none;
+}
+
+#menuPanel {
+	padding-top: 50px;
+	text-align: center;
+}
+
+#menuPanel ul {
+	width: 100%;
+	padding: 0;
+}
+
+#menuPanel .ui-panel-inner {
+	padding: 0;
+}
+
+#menuPanel li {
+	width: 100%;
+	list-style: none;
+	padding: 10px;
+	border-bottom: 1px grey solid;
+}
+
+.ui-header {
+	background-color: #ac2773;
+}
+
+#landing-logo {
+	margin-top:33%;
+}
+
+#login, #register {
+	width: 45%;
+}
+#guest {
+	width: 90%;
+}
+.bg-danger {
+	padding:10px;
+	color: black;
+}
+
+.fullwidth {
+	width: 100%;
+}
+.fullwidth.ui-content {
+	padding: 1em 0px 1em 0px;
+}
+.fullwidth .padding {
+	padding:1em;
+}
+
+.fullwidth .padding-sides {
+	padding: 0px 1em 0px 1em;
+}
+
+.listRestaurant {
+	border-left:solid 8px #12760D;
+	background-color: #CD7DAA; 
+	border-bottom: solid 1px white;
+}
+.listRestaurant .padding-sides {
+	padding-top:5px;
+	padding-bottom: 5px;
+	position: relative;
+}
+.listRestaurant h1 {
+	margin-top: 2px;
+	margin-bottom: 0px;
+}
+.listRestaurant .share-right {
+	position: absolute;
+	right: 14px;
+	top: 7px;
+}
+/*
+.fa-inverse {
+	color:#c33c89;
+}
+*/
+.loading, .center {
+	text-align: center;
+}
+
+.card {
+	position:absolute;
+	top:5%;
+	left:5%;
+	width:90%;
+	height: 85%;
+	background-color: white;
+	border: solid 1px black;
+	border-radius: 15px;
+	color: black;
+}
+
+.card-content {
+	padding: 0px 1em 0px 1em;
+}
+
+.card.one {
+	z-index: 2;
+}
+
+.card.two {
+	z-index: 1;
+}
+
+.card .center {
+	color: black;
+}
+.card .center .fa-inverse {
+	color:white;
+}
+
+.card .nav {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+	background-color: #A3A29B;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.card .nav .fa-heart {
+	color: #43C33C;
+}
+
+.card .nav .fa-times {
+	color: #DA3844;
+}
+
+#restaurant td, #restaurant th {
+	width: 30%;
+}
+
+body .page {
+	padding-top: 50px;
+}
+
+.nomargin-top {
+	margin-top: 0px;
+}
+
+.title {
+	margin-bottom:5px;
+}
+
+.row.grey {
+	background-color: #D1D1D1;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.padding.center {
+	padding-top:0;
+}
+
+.navbar a {
+	z-index: 1;
+}
+
+.navbar-brand.center {
+	width: 100%;
+	position: absolute;
+	top: 0;left: 0;
+	z-index: -1;
+}
+
+.reviewScores {
+	border: none;
+}
